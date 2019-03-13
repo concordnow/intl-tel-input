@@ -50,7 +50,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
         CMD2: 224
     }, windowLoaded = false;
     // keep track of if the window.load event has fired as impossible to check after the fact
-    $(window).load(function() {
+    $(window).on('load', function() {
         windowLoaded = true;
     });
     function Plugin(element, options) {
@@ -321,7 +321,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
                     injectValidationScript();
                 } else {
                     // wait until the load event so we don't block any other requests e.g. the flags image
-                    $(window).load(injectValidationScript);
+                    $(window).on('load', injectValidationScript);
                 }
             }
         },

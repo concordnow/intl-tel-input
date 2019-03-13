@@ -39,7 +39,7 @@
     windowLoaded = false;
 
   // keep track of if the window.load event has fired as impossible to check after the fact
-  $(window).load(function() {
+  $(window).on('load', function() {
     windowLoaded = true;
   });
 
@@ -368,7 +368,7 @@
           injectValidationScript();
         } else {
           // wait until the load event so we don't block any other requests e.g. the flags image
-          $(window).load(injectValidationScript);
+          $(window).on('load', injectValidationScript);
         }
       }
     },
